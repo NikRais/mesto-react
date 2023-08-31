@@ -36,7 +36,6 @@ function App() {
   };
 
   return (
-    <div>
       <div className="page">
         <Header />
 
@@ -53,8 +52,8 @@ function App() {
           title="Редактировать профиль"
           isOpen={isEditProfilePopupOpen}
           onClose={closeAllPopups}
+          buttonText={'Сохранить'}
         >
-          <fieldset className="popup__form-set">
             <input
               type="text"
               placeholder="Имя"
@@ -66,6 +65,7 @@ function App() {
               required
             />
             <span className="popup__input-error" id="username-error"></span>
+
             <input
               type="text"
               placeholder="О себе"
@@ -77,8 +77,7 @@ function App() {
               required
             />
             <span className="popup__input-error" id="profession-error"></span>
-            <button type="submit" className="popup__submit">Сохранить</button>
-          </fieldset>
+          
         </PopupWithForm>
 
         <PopupWithForm
@@ -86,8 +85,8 @@ function App() {
           title="Обновить аватар"
           isOpen={isEditAvatarPopupOpen}
           onClose={closeAllPopups}
+          buttonText={'Сохранить'}
         >
-          <fieldset className="popup__form-set">
             <input
               type="url"
               placeholder="Ссылка"
@@ -97,8 +96,6 @@ function App() {
               required
             />
             <span className="popup__input-error" id="avatar-error"></span>
-            <button type="submit" className="popup__submit">Сохранить</button>
-          </fieldset>
         </PopupWithForm>
 
         <PopupWithForm
@@ -106,8 +103,8 @@ function App() {
           title="Новое место"
           isOpen={isAddPlacePopupOpen}
           onClose={closeAllPopups}
+          buttonText={'Создать'}
         >
-          <fieldset className="popup__form-set">
             <input
               type="text"
               placeholder="Название"
@@ -128,28 +125,18 @@ function App() {
               required
             />
             <span id="link-error" className="popup__input-error"></span>
-            <button type="submit" className="popup__submit">Создать</button>
-          </fieldset>
         </PopupWithForm>
 
         <ImagePopup card={selectedCard} onClose={closeAllPopups}/>
 
-        <div className="popup popup-delete">
-          <div className="popup__container">
-            <button type="button" className="popup__close"></button>
-            <h2 className="popup__title">Вы уверены?</h2>
-            <form
-              action="#"
-              name="delete-form"
-              className="popup__form"
-              noValidate
-            >
-              <button type="submit" className="popup__submit">Да</button>
-            </form>
-          </div>
-        </div>
+        <PopupWithForm
+        title={'Вы уверены?'}
+        name={'confirm'}
+        buttonText={'Да'}
+        >
+        </PopupWithForm>
+      
       </div>
-    </div>
   );
 }
 
