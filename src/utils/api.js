@@ -42,26 +42,17 @@ class Api {
       .then(res => this._checkAnswer(res));
   }
 
-  /*Лайк на карточке*/
-  likePut(cardId) {
+  /*Поставить/удалить лайк на карточке*/
+  changeLikeCardStatus(cardId, isLiked) {
     return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
-      method: 'PUT',
-      headers: this._headers
-    })
-      .then(res => this._checkAnswer(res));
-  }
-
-  /*Удаление лайка с карточки*/
-  likeDel(cardId) {
-    return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
-      method: 'DELETE',
+      method: `${!isLiked ? 'DELETE' : 'PUT'}`,
       headers: this._headers
     })
       .then(res => this._checkAnswer(res));
   }
 
   /*Обновление аватара пользователя*/
-  editAvatar(data) {
+  setUserAvatar(data) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: 'PATCH',
       headers: this._headers,
@@ -73,7 +64,7 @@ class Api {
   }
 
   /*Редактирование профиля*/
-  editUserInfo(data) {
+  setUserInfo(data) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'PATCH',
       headers: this._headers,
