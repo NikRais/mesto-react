@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PopupWithForm from "./PopupWithForm";
 
 const AddPlacePopup = ({ isOpen, onClose, onAddPlace, onLoading }) => {
@@ -22,6 +22,11 @@ const AddPlacePopup = ({ isOpen, onClose, onAddPlace, onLoading }) => {
     });
   };
 
+  useEffect(() => {
+    setImage('');
+    setDescription('');
+}, [isOpen])
+
   return (
     <PopupWithForm
       name="card"
@@ -31,6 +36,7 @@ const AddPlacePopup = ({ isOpen, onClose, onAddPlace, onLoading }) => {
       onSubmit={handleSubmit}
     >
       <input
+        value={description}
         type="text"
         placeholder="Название"
         name="name"
@@ -43,6 +49,7 @@ const AddPlacePopup = ({ isOpen, onClose, onAddPlace, onLoading }) => {
       />
       <span className="popup__input-error" id="title-error"></span>
       <input
+        value={image}
         type="url"
         placeholder="Ссылка на картинку"
         name="link"
