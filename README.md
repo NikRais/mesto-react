@@ -1,33 +1,29 @@
-# Проектная работа Яндекс Практикум: Место React
+# Project No. 4 "Mesto" (eng. 'Place') on React
 
-### Обзор
-* Интро
-* Figma
-* Задача проекта
-* Методы создания сайта
-* GitHub 
+## Review
 
-**Интро**
+This project is realized during studying at [Yandex Praktikum](https://practicum.yandex.ru/) for web-developers.
+Mesto (or 'Place' in English) is performed as an interactive web page for posting pictures and gaining likes.
 
-Здесь представлен проект "Место".
-В Фигме размещен макет, в котором видно, как проект должен выглядеть на самых распространённых разрешениях экранов.
 
-**Figma**
+##Figma
 
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
+* [Link to Design Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
 
-**Задача проекта**
 
-Создание одностраничного сайта, применение JS с использованием макета в Фигме
+## Applied decisions in Project No.4:
 
-**Методы создания сайта**
+* adding and removing cards;
+* form validation performance via JavaScript and JSX code;
+* ability to like and dislike (by removing your like) cards;
+* updating user's avarar;
+* updating user's info;
+* BEM methodology in file structure (nested);
+* CSS Flexbox and Grid Layout;
+* pseudo-classes for CSS selectors;
+* CSS transition;
+* media queries for desctop and mobile versions (from 1280px to 320px);
 
-* CSS-стили;
-* Grid Layout;
-* Трансформации;
-* Организация файлом по БЭМ;
-* Флекс-бокс вёрстка;
-* JS вёрстка;
-* Классы в JS;
-* Webpack.
-* React
+## What to improve
+
+Registration ability on the site.
